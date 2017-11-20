@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import datetime
 
 def find_jobs(link):
     host = ''
@@ -18,7 +19,7 @@ def find_jobs(link):
 
 def save_jobs(job_link, company_name,
               title, condition, main,
-              detail, timenow):
+              detail):
     host = ''
     port =
     mongo = MongoClient(host, port)
@@ -33,7 +34,7 @@ def save_jobs(job_link, company_name,
         document['condition'] = condition
         document['main'] = main
         document['detail'] = detail
-        document['datetime'] = timenow
+        document['datetime'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
 
         jobs.insert_one(document)
 
