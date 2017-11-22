@@ -22,7 +22,6 @@ class RocketPunchJobsCrawler(object):
         for add in self.adds:
             chromedriver = 'D:/DSS/chromedriver_win32/chromedriver.exe'
             driver = webdriver.Chrome(chromedriver)
-
             try:
                 driver.get(add)
                 things = driver.find_elements_by_css_selector(
@@ -36,8 +35,28 @@ class RocketPunchJobsCrawler(object):
                     link = t.get_attribute("href")
                     comp_links.append(link)
                     # print(link)
-                #print(comp_names)
-                #print(comp_links)
+
+                for cl in comp_links:
+                    chromedriver = 'D:/DSS/chromedriver_win32/chromedriver.exe'
+                    driver = webdriver.Chrome(chromedriver)
+                    try:
+                        driver.get(cl)
+                        things = driver.find_elements_by_css_selector(
+                            '#company-jobs div.ui.job-title.header a')
+                        job_names = []
+                        job_links = []
+                        for t in things:
+                            job_names.append(t.text)
+                            link = t.get_attribute("href")
+                            job_links.append(link)
+
+                            
+
+                    except Exception as e:
+                        print(e)
+                    finally:
+                        driver.quit()
+
             except Exception as e:
                 print(e)
             finally:
