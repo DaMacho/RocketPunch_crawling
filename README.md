@@ -1,5 +1,4 @@
 # RocketPunch_crawling
-> Still working on it. But will finish soon!!!
 
 ## Objective
 
@@ -16,3 +15,17 @@
 - jobsdao.py
 - jobsdao_mongo.py
 - config.py
+
+### Efficiency
+- 308 job posts / 25 minutes on AWS t2.micro
+
+### Used packages
+- pyvirtualdisplay
+- selenium
+- requests
+- pymysql
+- pymongo
+- datetime
+- bs4
+- json
+- re
