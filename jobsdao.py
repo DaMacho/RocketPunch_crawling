@@ -17,8 +17,7 @@ class JobsDAO(object):
             main = title.replace("'", '').replace('"', '')
             detail = title.replace("'", '').replace('"', '')
 
-            query = """INSERT INTO jobs
-                    VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}')""" \
+            query = """INSERT INTO jobs VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}')""" \
                     .format(jobs_id, company_name, title,
                             condition, main, detail,
                             datetime.datetime.now().strftime('%Y-%m-%d %H:%M'))

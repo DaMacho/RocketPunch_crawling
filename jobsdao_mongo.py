@@ -2,9 +2,11 @@ from pymongo import MongoClient
 import datetime
 
 def find_jobs(link):
+    user = ''
+    pwd = ''
     host = ''
-    port =
-    mongo = MongoClient(host, port)
+    port = 
+    mongo = MongoClient('mongodb://%s:%s@%s:%s' % (user,pwd,host,port))
 
     jobs = mongo.mydata.jobs
     found = jobs.find_one({'_id' : link})
@@ -20,14 +22,16 @@ def find_jobs(link):
 def save_jobs(job_link, company_name,
               title, condition, main,
               detail):
+    user = ''
+    pwd = ''
     host = ''
-    port =
-    mongo = MongoClient(host, port)
+    port = 
+    mongo = MongoClient('mongodb://%s:%s@%s:%s' % (user,pwd,host,port))
 
     jobs = mongo.mydata.jobs
 
     if not find_jobs(job_link):
-        decument = {}
+        document = {}
         document['_id'] = job_link
         document['company_name'] = company_name
         document['title'] = title
