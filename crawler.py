@@ -32,18 +32,17 @@ class RocketPunchJobsCrawler(object):
 
     def crawl_link(self):
         for add in self.adds:
-            for form in get_forms(add):
-                job_link = ("https://www.rocketpunch.com{}".format(form.group()))
-                try:
-                    self.crawl_info(job_link)
-                except Exception:
-                    continue
+            try:
+                for form in get_forms(add):
+                    job_link = ("https://www.rocketpunch.com{}".format(form.group()))
+                    try:
+                        self.crawl_info(job_link)
+                    except Exception:
+                        continue
 
             except Exception as e:
                 print(e)
-            finally:
-                driver_0.quit()
-
+                break
 
     def crawl_info(self, link):
         chromedriver = '/usr/lib/chromium-browser/chromedriver'
