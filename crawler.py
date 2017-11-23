@@ -97,6 +97,9 @@ class RocketPunchJobsCrawler(object):
                           title, condition, main, detail)
                 self.jobsdao.save_jobs()
 
+            except Exception as e:
+                print(e)
+
         except Exception as e:
             print(e)
         finally:
