@@ -13,9 +13,9 @@ class JobsDAO(object):
                   main, detail):
         if not self.get_jobs_by_id(jobs_id):
             title = title.replace("'", '').replace('"', '')
-            condition = title.replace("'", '').replace('"', '')
-            main = title.replace("'", '').replace('"', '')
-            detail = title.replace("'", '').replace('"', '')
+            condition = condition.replace("'", '').replace('"', '')
+            main = main.replace("'", '').replace('"', '')
+            detail = detail.replace("'", '').replace('"', '')
 
             query = """INSERT INTO jobs VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}')""" \
                     .format(jobs_id, company_name, title,
