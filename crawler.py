@@ -22,10 +22,9 @@ class RocketPunchJobsCrawler(object):
         self.jobsdao = jobsdao
         self.adds = adds
 
-    def get_forms(url):
-        response = requests.get(url)
-        content = response.text
-        contents = json.loads(content)
+    def get_forms(self, link):
+        response = requests.get(link)
+        contents = json.loads(response.text)
         info = contents['data']['template']
         form = re.finditer(r'(/jobs/[^t]\d+/\S+[^"\s])', info)
         return form
@@ -33,7 +32,7 @@ class RocketPunchJobsCrawler(object):
     def crawl_link(self):
         for add in self.adds:
             try:
-                for form in get_forms(add):
+                for form in self.get_forms(add):
                     job_link = ("https://www.rocketpunch.com{}".format(form.group()))
                     try:
                         self.crawl_info(job_link)
