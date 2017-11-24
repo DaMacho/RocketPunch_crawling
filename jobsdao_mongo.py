@@ -1,11 +1,17 @@
 from pymongo import MongoClient
 import datetime
 
+'''
+Purpose to save information into MongoDB.
+Total 2 functions are included.
+'''
+
+# Find previous records to prevent duplicated records
 def find_jobs(link):
     user = ''
     pwd = ''
     host = ''
-    port = 
+    port =
     mongo = MongoClient('mongodb://%s:%s@%s:%s' % (user,pwd,host,port))
 
     jobs = mongo.mydata.jobs
@@ -19,13 +25,15 @@ def find_jobs(link):
 #        return True
 #    return False
 
+
+# Save information by order
 def save_jobs(job_link, company_name,
               title, condition, main,
               detail):
     user = ''
     pwd = ''
     host = ''
-    port = 
+    port =
     mongo = MongoClient('mongodb://%s:%s@%s:%s' % (user,pwd,host,port))
 
     jobs = mongo.mydata.jobs

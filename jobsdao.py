@@ -2,6 +2,11 @@ import config as cfg
 import pymysql
 import datetime
 
+'''
+Class JobsDAO is to access to MySQL and process information.
+Make connection to MySQL server through configuration information.
+'''
+
 class JobsDAO(object):
     def __init__(self):
         self.db = pymysql.connect(host=cfg.DB_HOST, port=cfg.DB_PORT,

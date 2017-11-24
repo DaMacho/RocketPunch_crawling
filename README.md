@@ -1,4 +1,5 @@
 # RocketPunch_crawling
+> Please read comments in each file to use.
 
 ## Objective
 
@@ -25,7 +26,5 @@
 - requests
 - pymysql
 - pymongo
-- datetime
-- bs4
 - json
 - re
