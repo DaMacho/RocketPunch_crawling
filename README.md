@@ -20,7 +20,11 @@
 ### Efficiency
 - 308 job posts / 25 minutes on AWS t2.micro
 
-### Used packages
+### Requirements
+- Python 3.x
+- MySQL
+- MongoDB
+- chromedriver
 - pyvirtualdisplay
 - selenium
 - requests
@@ -28,3 +32,8 @@
 - pymongo
 - json
 - re
+
+### Supplement points
+- speed is slower than supposed
+- as infos remain in DB, suggest to make web app dashboard
+- may good to put search ability in it
