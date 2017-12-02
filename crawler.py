@@ -62,6 +62,10 @@ class RocketPunchJobsCrawler(object):
 
     # Link to job links by selenium and gather information
     def crawl_info(self, link):
+        '''
+        If didn't install chromedriver, should install it first.
+        And put directory of chromedriver.
+        '''
         chromedriver = '/usr/lib/chromium-browser/chromedriver'
         driver_2 = webdriver.Chrome(chromedriver)
 
